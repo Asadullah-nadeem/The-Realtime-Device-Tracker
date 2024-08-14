@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const http = require('http');
 const socketio = require('socket.io');
+const port = 3000;
 
 const server = http.createServer(app);
 const io = socketio(server);
@@ -24,6 +25,6 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-server.listen(3000, () => {
-    console.log(' 127.0.0.1:3000');
+server.listen(port, () => {
+    console.log(' 127.0.0.1:${port}');
 });
